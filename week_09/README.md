@@ -66,11 +66,3 @@ python run_modal_snapshot.py
 ```
 
 This runs `modal run modal_app.py` from an immutable temporary snapshot of the project to avoid local file-change races during image build.
-
-## Live code review walkthrough checklist
-
-1. Explain module boundaries (`router`, `moe`, `tk_backend`, `benchmark`, `tests`)
-2. Show why grouped path is used (maps to expert-parallel GEMM / TK kernels)
-3. Run `pytest -q tests` and explain each testcase
-4. Run `python benchmark.py` and interpret speedup fields
-5. Explain that true WMMA/TMA gains require `tk_moe_ext` built against ThunderKittens on B200
